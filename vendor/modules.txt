@@ -1,12 +1,6 @@
 # github.com/inconshreveable/mousetrap v1.0.0
 ## explicit
 github.com/inconshreveable/mousetrap
-# github.com/rpenalozav/parsing_http_response v0.0.0-20220325015514-da8f74ec4daf
-## explicit
-github.com/rpenalozav/parsing_http_response/internal
-github.com/rpenalozav/parsing_http_response/internal/cli
-github.com/rpenalozav/parsing_http_response/internal/storage/csv
-github.com/rpenalozav/parsing_http_response/internal/storage/ontario
 # github.com/spf13/cobra v1.4.0
 ## explicit; go 1.15
 github.com/spf13/cobra
