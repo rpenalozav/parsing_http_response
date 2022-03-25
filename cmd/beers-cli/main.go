@@ -3,12 +3,13 @@ package main
 import (
 	"flag"
 
-	"github.com/rpenalozav/parsing_http_response/internal/storage/ontario"
+	"parsing_http_response/internal/storage/ontario"
 
-	"github.com/rpenalozav/parsing_http_response/internal/storage/csv"
+	"parsing_http_response/internal/storage/csv"
 
-	beerscli "github.com/rpenalozav/parsing_http_response/internal"
-	"github.com/rpenalozav/parsing_http_response/internal/cli"
+	beerscli "parsing_http_response/internal"
+	"parsing_http_response/internal/cli"
+
 	"github.com/spf13/cobra"
 )
 

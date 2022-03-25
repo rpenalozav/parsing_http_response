@@ -6,7 +6,7 @@ import (
 	"strconv"
 	"strings"
 
-	beerscli "github.com/rpenalozav/parsing_http_response/internal"
+	beerscli "parsing_http_response/internal"
 )
 
 type repository struct {

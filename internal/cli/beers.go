@@ -4,7 +4,8 @@ import (
 	"fmt"
 	"strconv"
 
-	beerscli "github.com/rpenalozav/parsing_http_response/internal"
+	beerscli "parsing_http_response/internal"
+
 	"github.com/spf13/cobra"
 )
 

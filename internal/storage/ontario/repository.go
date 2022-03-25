@@ -6,7 +6,7 @@ import (
 	"io/ioutil"
 	"net/http"
 
-	beerscli "github.com/rpenalozav/parsing_http_response/internal"
+	beerscli "parsing_http_response/internal"
 )
 
 const (
