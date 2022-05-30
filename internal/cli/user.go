@@ -13,7 +13,7 @@ const IUser string = "login"
 // initialize users command
 func InitUserCmd(RemoteRepository UserRepo, CsvRepository UserRepo) *cobra.Command {
 	userCmd := &cobra.Command{
-		Use:   "user",
+		Use:   "github",
 		Short: "Print data about github user",
 		Run:   runUserFn(RemoteRepository, CsvRepository),
 	}
