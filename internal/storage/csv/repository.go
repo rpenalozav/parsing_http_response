@@ -1,51 +1,32 @@
 package csv
 
 import (
-	"bufio"
+	"encoding/csv"
+	"fmt"
 	"os"
-	"strconv"
-	"strings"
-
-	beerscli "parsing_http_response/internal"
+	"parsing_http_response/internal"
 )
 
-type repository struct {
+type UserRepo struct {
 }
 
-// NewRepository initialize csv repository
-func NewRepository() beerscli.BeerRepo {
-	return &repository{}
+func NewCsvRepository() internal.UserRepo {
+	return &UserRepo{}
 }
 
-// GetBeers fetch beers data from csv
-func (r *repository) GetBeers() ([]beerscli.Beer, error) {
-	f, _ := os.Open("05-parsing_http_response/data/beers.csv")
-	reader := bufio.NewReader(f)
+func (p *UserRepo) AddUser(user *internal.User) error {
+	f, err := os.Create("planet." + user.Login + ".csv")
+	defer f.Close()
 
-	var beers []beerscli.Beer
+	csvWriter := csv.NewWriter(f)
 
-	for line := readLine(reader); line != nil; line = readLine(reader) {
-		values := strings.Split(string(line), ",")
+	csvWriter.Write(user.ToArray())
+	csvWriter.Flush()
 
-		productID, _ := strconv.Atoi(values[0])
-
-		beer := beerscli.NewBeer(
-			productID,
-			values[1],
-			values[2],
-			values[5],
-			values[6],
-			values[3],
-			beerscli.NewBeerType(values[4]),
-		)
-
-		beers = append(beers, beer)
-	}
-
-	return beers, nil
+	return err
 }
 
-func readLine(reader *bufio.Reader) (line []byte) {
-	line, _, _ = reader.ReadLine()
-	return
+func (p *UserRepo) GetUser(login string) (user *internal.User, err error) {
+	fmt.Printf("Not implemented")
+	panic(1)
 }
