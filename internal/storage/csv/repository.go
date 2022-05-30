@@ -15,7 +15,7 @@ func NewCsvRepository() internal.UserRepo {
 }
 
 func (p *UserRepo) AddUser(user *internal.User) error {
-	f, err := os.Create("planet." + user.Login + ".csv")
+	f, err := os.Create("github_" + user.Login + ".csv")
 	defer f.Close()
 
 	csvWriter := csv.NewWriter(f)
