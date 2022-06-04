@@ -1,6 +1,7 @@
 package cli
 
 import (
+	"fmt"
 	"github.com/spf13/cobra"
 	. "parsing_http_response/internal"
 )
@@ -26,6 +27,7 @@ func runUserFn(remoteRepository UserRepo, csvRepository UserRepo) CobraFn {
 	return func(cmd *cobra.Command, args []string) {
 		user, _ := cmd.Flags().GetString(IUser)
 		res, err := remoteRepository.GetUser(user)
+		fmt.Println(res)
 		if err != nil {
 			panic("user not exist")
 		}
